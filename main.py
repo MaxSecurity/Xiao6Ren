@@ -4,7 +4,8 @@
 # ._Email:_.=."max@chamd5.org"
 import time
 from borax.calendars.lunardate import LunarDate
-from QuXiang.HeGong import HeGong
+from QuXiang.QuXiang import *
+
 
 def ShiChen():
     print(time.strftime("现在阳历时间为：%Y-%m-%d  %H:%M\n", time.localtime()))
@@ -34,7 +35,8 @@ def ShiChen():
 def YunSuan():
     #六神定义
     dict_list = ['大安','留连','速喜','赤口','小吉','空亡']
-    # s_year = int(input("请输入年："))
+    dict_key = ['大安','留连','速喜','赤口','小吉','空亡']
+    dict ={"大安":Daan,'留连':LiuLian,'速喜':SuXi,'赤口':ChiKou,'小吉':XiaoJi,'空亡':KongWang}
     s_month = int(input("请输入月/随机数："))
     s_day = int(input("请输入日/随机数："))
     s_hour = int(input("请输入时辰："))
@@ -52,7 +54,13 @@ def YunSuan():
     month_f = dict_list[month_i]
     hour_f = dict_list[hour_i]
     print('三宫所属：',month_f,'☯',today_f,'☯',hour_f +'\n')
-    return month_f,today_f,hour_f
+    today_o = dict[dict_key[today_i]]()
+    month_o = dict[dict_key[month_i]]()
+    hour_o = dict[dict_key[hour_i]]()
+    print(month_o+'\n\n',today_o+'\n\n',hour_o)
+
+
+
 
 if __name__ == '__main__':
     ShiChen()

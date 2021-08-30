@@ -3,6 +3,4 @@
 # ._author_.=."Max丶"
 # ._Email:_.=."max@chamd5.org"
 
-def HeGong():
-    with open(r'QuXiang/HeGong', encoding="utf-8") as file:
-        print(file.read())
+from QuXiang.QuXiang import *
