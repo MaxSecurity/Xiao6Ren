@@ -58,12 +58,12 @@ def YunSuan():
     month_o = dict[dict_key[month_i]]()
     hour_o = dict[dict_key[hour_i]]()
     print(month_o+'\n\n',today_o+'\n\n',hour_o)
-
+    print(HeGong())
 
 
 
 if __name__ == '__main__':
     ShiChen()
     YunSuan()
-    HeGong()
+
 
