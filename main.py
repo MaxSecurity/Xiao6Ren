@@ -17,7 +17,7 @@ def ShiChen():
     month = lunar_date.month
     day = lunar_date.day
     print(lunar_date.strftime('%G'))
-    print('农历时间：', month, '月',day,'日','\n')
+    print('农历时间:', month, '月',day,'日','\n')
     print('以下是时辰对应的数字：')
     print('子时 23:00-01:00：1 ')
     print('丑时 01:00-03:00：2 ')
