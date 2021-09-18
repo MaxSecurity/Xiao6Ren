@@ -34,12 +34,13 @@ def ShiChen():
 
 def YunSuan():
     #六神定义
-    dict_list = ['大安','留连','速喜','赤口','小吉','空亡']
+    dict_list = ['大安(木)','留连(土)','速喜(火)','赤口(金)','小吉(水)','空亡(土)']
     dict_key = ['大安','留连','速喜','赤口','小吉','空亡']
     dict ={"大安":Daan,'留连':LiuLian,'速喜':SuXi,'赤口':ChiKou,'小吉':XiaoJi,'空亡':KongWang}
     s_month = int(input("请输入月/随机数："))
     s_day = int(input("请输入日/随机数："))
     s_hour = int(input("请输入时辰："))
+    dict_shichen = ['子时:水','丑时:土','寅时:木','卯时:木','辰时:土','巳时:火','午时:火','未时:土','申时:金','酉时:金','戌时:图','亥时:水']
 
     # 运算 推算日月时辰对应的数字
     sum = s_month + s_day - 1
@@ -53,7 +54,10 @@ def YunSuan():
     today_f = dict_list[today_i]
     month_f = dict_list[month_i]
     hour_f = dict_list[hour_i]
-    print('三宫所属：',month_f,'☯',today_f,'☯',hour_f +'\n')
+    shichen_f = dict_shichen[s_hour]
+    print('\n'+'天时☯地利☯人和☯用神'+'\n')
+    print('起因☯经过☯现在☯未来'+'\n')
+    print('三宫所属：',month_f,'☯',today_f,'☯',hour_f,'☯',shichen_f +'\n')
     today_o = dict[dict_key[today_i]]()
     month_o = dict[dict_key[month_i]]()
     hour_o = dict[dict_key[hour_i]]()
