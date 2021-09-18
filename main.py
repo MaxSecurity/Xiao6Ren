@@ -67,7 +67,10 @@ def YunSuan():
 
 
 if __name__ == '__main__':
-    ShiChen()
-    YunSuan()
+    while True: #死循环 每一天运行一次配置
+        ShiChen()
+        YunSuan()
+        time.sleep(86400)
+
 
 
