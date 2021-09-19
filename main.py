@@ -3,8 +3,11 @@
 # ._author_.=."Max丶"
 # ._Email:_.=."max@chamd5.org"
 import time
+from prettytable import PrettyTable
+import tabulate
 from borax.calendars.lunardate import LunarDate
 from QuXiang.QuXiang import *
+
 
 
 def ShiChen():
@@ -37,10 +40,13 @@ def YunSuan():
     dict_list = ['大安(木)','留连(土)','速喜(火)','赤口(金)','小吉(水)','空亡(土)']
     dict_key = ['大安','留连','速喜','赤口','小吉','空亡']
     dict ={"大安":Daan,'留连':LiuLian,'速喜':SuXi,'赤口':ChiKou,'小吉':XiaoJi,'空亡':KongWang}
-    s_month = int(input("请输入月/随机数："))
-    s_day = int(input("请输入日/随机数："))
-    s_hour = int(input("请输入时辰："))
-    dict_shichen = ['子时:水','丑时:土','寅时:木','卯时:木','辰时:土','巳时:火','午时:火','未时:土','申时:金','酉时:金','戌时:图','亥时:水']
+    # s_month = int(input("请输入月/随机数："))
+    # s_day = int(input("请输入日/随机数："))
+    # s_hour = int(input("请输入时辰："))
+    s_month = 5
+    s_day = 4
+    s_hour = 8
+    dict_shichen = ['子时(水)','丑时(土)','寅时(木)','卯时(木)','辰时(土)','巳时(火)','午时(火)','未时(土)','申时(金)','酉时(金)','戌时(土)','亥时(水)']
 
     # 运算 推算日月时辰对应的数字
     sum = s_month + s_day - 1
@@ -55,14 +61,19 @@ def YunSuan():
     month_f = dict_list[month_i]
     hour_f = dict_list[hour_i]
     shichen_f = dict_shichen[s_hour]
-    print('\n'+'天时☯地利☯人和☯用神'+'\n')
-    print('起因☯经过☯现在☯未来'+'\n')
-    print('三宫所属：',month_f,'☯',today_f,'☯',hour_f,'☯',shichen_f +'\n')
+    table = PrettyTable(['☯天  时☯','☯地  利☯','☯人  和☯','☯用  神☯'])
+    table.title = '☯三宫☯☯所属☯'
+    table.add_row(['☯'+month_f+'☯☯','☯'+today_f+'☯☯','☯'+hour_f+'☯☯','☯'+shichen_f+'☯☯'])
+    table.add_row(['☯起 因☯','☯经 过☯','☯现 在☯','☯未 来☯'])
+    print(table)
     today_o = dict[dict_key[today_i]]()
     month_o = dict[dict_key[month_i]]()
     hour_o = dict[dict_key[hour_i]]()
-    print(month_o+'\n\n',today_o+'\n\n',hour_o+'\n\n')
-    print(HeGong())
+    print('\n\n'+month_o+'\n\n',today_o+'\n\n',hour_o+'\n\n')
+    print(HeGong()+'\n\n')
+    print(table)
+
+
 
 
 
