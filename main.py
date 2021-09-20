@@ -37,15 +37,15 @@ def ShiChen():
 
 def YunSuan():
     #六神定义
-    dict_list = ['大安(木)','留连(土)','速喜(火)','赤口(金)','小吉(水)','空亡(土)']
+    dict_list = ['大安☯(木)','留连☯(土)','速喜☯(火)','赤口☯(金)','小吉☯(水)','空亡☯(土)']
     dict_key = ['大安','留连','速喜','赤口','小吉','空亡']
     dict ={"大安":Daan,'留连':LiuLian,'速喜':SuXi,'赤口':ChiKou,'小吉':XiaoJi,'空亡':KongWang}
-    # s_month = int(input("请输入月/随机数："))
-    # s_day = int(input("请输入日/随机数："))
-    # s_hour = int(input("请输入时辰："))
-    s_month = 5
-    s_day = 4
-    s_hour = 8
+    s_month = int(input("请输入月/随机数："))
+    s_day = int(input("请输入日/随机数："))
+    s_hour = int(input("请输入时辰："))
+    # s_month = 5
+    # s_day = 4
+    # s_hour = 8
     dict_shichen = ['子时(水)','丑时(土)','寅时(木)','卯时(木)','辰时(土)','巳时(火)','午时(火)','未时(土)','申时(金)','酉时(金)','戌时(土)','亥时(水)']
 
     # 运算 推算日月时辰对应的数字
@@ -63,7 +63,7 @@ def YunSuan():
     shichen_f = dict_shichen[s_hour]
     table = PrettyTable(['☯天  时☯','☯地  利☯','☯人  和☯','☯用  神☯'])
     table.title = '☯三宫☯☯所属☯'
-    table.add_row(['☯'+month_f+'☯☯','☯'+today_f+'☯☯','☯'+hour_f+'☯☯','☯'+shichen_f+'☯☯'])
+    table.add_row(['☯'+month_f+'☯','☯'+today_f+'☯','☯'+hour_f+'☯','☯'+shichen_f+'☯'])
     table.add_row(['☯起 因☯','☯经 过☯','☯现 在☯','☯未 来☯'])
     print(table)
     today_o = dict[dict_key[today_i]]()
