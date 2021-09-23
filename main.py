@@ -54,13 +54,13 @@ def YunSuan():
     month_i = int((s_month - 1) % 6)
     hour = s_month + s_day + s_hour
     hour_i =int((hour - 3) % 6)
-
+    hour_s = hour_i - 1
 
     #运算 年月时辰对应的 六神三宫
     today_f = dict_list[today_i]
     month_f = dict_list[month_i]
     hour_f = dict_list[hour_i]
-    shichen_f = dict_shichen[s_hour]
+    shichen_f = dict_shichen[hour_s]
     table = PrettyTable(['☯天  时☯','☯地  利☯','☯人  和☯','☯用  神☯'])
     table.title = '☯三宫☯☯所属☯'
     table.add_row(['☯'+month_f+'☯','☯'+today_f+'☯','☯'+hour_f+'☯','☯'+shichen_f+'☯'])
